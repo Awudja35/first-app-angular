@@ -12,13 +12,14 @@ export class User {
 @Component({
   selector: 'app-root',
   template: `
-    @if (isServerRunning) {
-      <p>Server is running</p>
+    @if (isLoggedIn) {
+      <p><app-user /> is logged in</p>
     } @else {
-      <p>Server is not running</p>
+      <p>check password or username!!!</p>
     }
   `,
+  imports: [User],
 })
 export class App {
-  isServerRunning = false;
+  isLoggedIn = false;
 }
